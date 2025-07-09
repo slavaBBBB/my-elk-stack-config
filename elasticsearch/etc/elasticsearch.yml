@@ -36,6 +36,8 @@ path.data: /mnt/dopDisk1TB/lost+found/elasticsearch
 # Path to log files:
 #
 path.logs: /mnt/dopDisk1TB/lost+found/elasticsearch-logs
+
+path.repo: /mnt/dopDisk1TB/lost+found/elasticsearch-backup
 #
 # ----------------------------------- Memory -----------------------------------
 #
@@ -92,6 +94,16 @@ http.port: 9200
 # Enable security features
 xpack.security.enabled: true
 xpack.security.authc.api_key.enabled: true
+xpack.notification.email.account:
+  default:
+    smtp:
+      host: your_smtp_host
+      port: 587
+      user: your_smtp_user
+      starttls.enable: true
+
+xpack.security.audit.enabled: true
+xpack.security.audit.logfile.events.include: access_denied, anonymous_access_denied, authentication_failed
 
 xpack.security.enrollment.enabled: true
 
